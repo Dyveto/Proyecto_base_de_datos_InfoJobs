@@ -6,6 +6,10 @@ CREATE TABLE Usuario (
     Telefono INTEGER NOT NULL
 );
 
+-- Cambio del tipo de dato a Varchar del Telefono debido a que los numeros de telefono superan el rango de los INTEGER
+ALTER TABLE Usuario
+ALTER COLUMN Telefono TYPE varchar(15); 
+
 -- Tabla Candidato
 CREATE TABLE Candidato (
     ID_usuario INTEGER PRIMARY KEY,
@@ -79,6 +83,10 @@ CREATE TABLE Contacto_RRHH (
     ID_Empresa INTEGER UNIQUE,
     CONSTRAINT fk_contacto_empresa FOREIGN KEY(ID_Empresa) REFERENCES Empleador(ID_Empresa)
 );
+
+-- Cambio del tipo de dato a Varchar del Telefono debido a que los numeros de telefono superan el rango de los INTEGER
+ALTER TABLE Contacto_RRHH
+ALTER COLUMN Telefono TYPE varchar(15);  
 
 -- Tabla Reporte
 CREATE TABLE Reporte (
